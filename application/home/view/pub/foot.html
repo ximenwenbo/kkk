@@ -1,0 +1,33 @@
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-7">
+                <div class="footer-text">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><img src="{:config('home_images')}mapicon.png">地址：{$info.address}</li>
+                        <li><img src="{:config('home_images')}teliocn.png">电话：{$info.tel}</li>
+                        <li><img src="{:config('home_images')}emailicon.png">E-mail：{$info.email}</li>
+                        <li><img src="{:config('home_images')}websiteicon.png">网址：{$info.com}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-5">
+                <div class="footer-erwei">
+
+                    <div>
+                        <a href="#" class="thumbnail">
+                            <img src="{:substr($info.code_img,1)}">
+                        </a>
+                        <p>扫码关注长顺邓氏微信公众号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="copyright">
+    <p><span>服务条款</span>{$info.copyrigtht}　{$info.company_name}　保留所有权利　{$info.icp}</p>
+</div>
+</body>
+</html>

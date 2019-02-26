@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,inital-scarel=1" name="viewport"/>
+    <title>小匠文化</title>
+    <style type="text/css">
+        /*分页样式*/
+        .pagination li{list-style:none;float:left;margin-left:10px;
+            padding:0 10px;
+            background-color:#5a98de;
+            border:1px solid #ccc;
+            height:26px;
+            line-height:26px;
+            cursor:pointer;
+            color:#fff;
+        }
+        .pagination li a{color:white;}
+        .pagination li.active{background-color:white;color:gray;}
+        .pagination li.disabled{background-color:white;color:gray;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}main.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}media.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}animate.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}font-awesome.min.css"/>
+    <script type="text/javascript" src="{:config('home_js')}jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}bootstrap.min.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}jquery.page.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}main.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}wow.min.js"></script>
+
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+
+
+</head>
+
+<body>
+<!----header---->
+{include file="pub/head"}
+<!--publicBanner-->
+<div class="piblicBanner">
+    <img src="{:config('home_images')}innerPublicBanner.jpg">
+    <div class="breadcrumb_part">
+        <div class="breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="guide">
+                            <h2>小匠新闻 /
+                                <small>Small Craftsman News</small>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--newslist-->
+<div class="newsList">
+    <div class="container">
+        <div class="row">
+           {volist name="infos" id='v'}
+            <div class="col-md-6">
+                <a href="/home/news/detail?id= +{$v.id}">
+                    <div class="newsItem">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-5 paddR">
+                                <div class="newsPic">
+                                    <img src="{:config('home_images')}meimei.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-sm-7">
+                                <div class="newsTxt">
+                                    <h4>{$v.title}</h4>
+                                    <p>
+                                       {$v.content}
+                                    </p>
+                                    <span>MORE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {/volist}
+
+
+            <div class="col-md-12">
+                <div class="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(".page").createPage({
+        pageCount:10,
+        current:1,
+        backFn:function(p){
+        //console.log(p);
+        }
+    });
+</script>
+<!----footer---->
+{include file="pub/foot"}

@@ -1,0 +1,87 @@
+{include file="pub/head" /}
+
+<title>新闻分类设置</title>
+
+
+
+
+</head>
+<body>
+
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>开始设置 <span class="c-gray en">&gt;</span>  <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">	<a  id="tianjia" href="javascript:;" onclick="member_add('添加联系方式','{:url(\'tianjia\')}','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加新闻分类</a>
+
+	</span>
+	<div class="mt-20">
+	<table class="table table-border table-bordered table-hover table-bg table-sort">
+		<thead>
+			<tr class="text-c">
+				<th width="25"><input type="checkbox" name="gg" value=""></th>
+				<th width="30">ID</th>
+				<th width="100">新闻分类名称</th>
+
+
+				<th width="30">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			{volist name="info" id="v"  empty="没有任何记录"}
+
+			<td><input type="checkbox"  name="aa[]"></td>
+				<td>{$v.category_id}</td>
+				<td>{$v.category_name}</td>
+
+
+
+
+
+				<td class="td-manage">
+					<a title="编辑" href="javascript:;"
+					   onclick="member_edit('编辑','{:url(\'xiugai\',[\'id\'=>$v.category_id])}','4','','510')"
+					   class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<a title="删除" href="javascript:;" onclick="member_del(this,{$v.category_id})"
+					   class="ml-5" style="text-decoration:none">
+						<i class="Hui-iconfont">&#xe6e2;</i></a>
+
+
+				</td>
+			</tr>
+			{/volist}
+
+		</tbody>
+	</table>
+	</div>
+</div>
+
+{include file="news_category/js_index" /}
+
+{include file="pub/foot" /}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

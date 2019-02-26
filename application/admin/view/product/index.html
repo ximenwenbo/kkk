@@ -1,0 +1,122 @@
+{include file="pub/head" /}
+
+<title>联系方式设置</title>
+<!--<script>-->
+	<!--window.onload = function(){-->
+	     <!--var shu = $('#shu').html();-->
+
+	     <!--//判断 如果已经有地址 去除添加按钮-->
+	     <!--if(shu > 0){-->
+	         <!--$('#tianjia').remove()  ;-->
+		 <!--}-->
+	<!--}-->
+<!--</script>-->
+
+
+
+</head>
+<body>
+
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>开始设置 <span class="c-gray en">&gt;</span>  <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">	<a  id="tianjia" href="javascript:;" onclick="member_add('添加产品','{:url(\'tianjia\')}','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加产品</a>
+
+	</span>
+	<div class="mt-20">
+	<table class="table table-border table-bordered table-hover table-bg table-sort">
+		<thead>
+			<tr class="text-c">
+
+				<th width="30">ID</th>
+				<th width="30">名称</th>
+				<th width="100">价格</th>
+				<th width="100">分类id</th>
+				<th width="100">链接</th>
+				<th width="140">logo</th>
+
+
+				<th width="30">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			{volist name="info" id="v"  empty="没有任何记录"}
+
+
+				<td>{$v.product_id}</td>
+				<td>{$v.product_name}</td>
+				<td>{$v.product_price}</td>
+				<td>{$v.category_id}</td>
+				<td>{$v.product_link}</td>
+				<td><img src="{:substr($v.product_img,1)}" alt="" width="100"></td>
+
+
+
+
+
+
+				<td class="td-manage">
+					<a title="编辑" href="javascript:;"
+					   onclick="member_edit('编辑','{:url(\'xiugai\',[\'id\'=>$v.product_id])}','4','','510')"
+					   class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<a title="删除" href="javascript:;" onclick="member_del(this,{$v.product_id})"
+					   class="ml-5" style="text-decoration:none">
+						<i class="Hui-iconfont">&#xe6e2;</i></a>
+
+
+				</td>
+			</tr>
+			{/volist}
+
+		</tbody>
+	</table>
+	</div>
+</div>
+
+{include file="product/js_index" /}
+	<script type="text/javascript" src="{:config('admin_lib')}My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="{:config('admin_lib')}datatables/1.10.0/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="{:config('admin_lib')}laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" >
+        $(function(){
+            $('.table-sort').dataTable({
+                'lengthMenu':[[1,2,5,8],['一条','二条','五条','八条',]],
+                'info':true,
+                "paging":true,
+                'searching':true,
+                'order':[[1,'desc']]  //设置默认第一列降排序
+
+
+            });
+
+        });
+	</script>
+
+{include file="pub/foot" /}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

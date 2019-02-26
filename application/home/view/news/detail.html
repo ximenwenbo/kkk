@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,inital-scarel=1" name="viewport"/>
+    <title>木瓜文化</title>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}main.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}media.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}animate.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="{:config('home_css')}font-awesome.min.css"/>
+    <script type="text/javascript" src="{:config('home_js')}jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}bootstrap.min.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}jquery.page.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}main.js"></script>
+    <script type="text/javascript" src="{:config('home_js')}wow.min.js"></script>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+</head>
+
+<body>
+{include file="pub/head"}
+<!--publicBanner-->
+<div class="piblicBanner">
+
+
+</div>
+<!--newsdetail-->
+<div class="newsDetail">
+    <div class="container perContent">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="news_detail_title">
+                    <h4>{$info.title}</h4>
+                    <div class="release">
+                        <span class="author">发布人：{$info.author}</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="per_txt_detail">
+                    <p>{$info.content}</p>
+
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <ul class="pager">
+                    <li class="previous disabled"><a href="/home/news/last?id= +{$info.id}+&cat_id=+{$info.category_id}">&larr; 上一篇</a></li>
+                    <li class="next">             <a href="/home/news/next?id= +{$info.id}+&cat_id=+{$info.category_id}">下一篇 &rarr;</a></li>
+                </ul>
+
+        </div>
+    </div>
+</div>
+
+<!----footer---->
+
+

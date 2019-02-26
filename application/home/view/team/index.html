@@ -1,0 +1,44 @@
+{include file="pub/head"}
+<!--publicBanner-->
+<div class="piblicBanner">
+    <img src="{:substr($img.img,1)}" >
+    <div class="breadcrumb_part">
+        <div class="breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="guide">
+                            <h2>木瓜团队 /
+                                <small>Mugua Team</small>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--technicalTeam-->
+<div class="technicalTeam">
+    <div class="container">
+        <div class="row">
+            {volist name="teams" id="v"}
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <a href="/home/team/detail?id= +{$v.id}">
+                    <div class="team">
+                        <img src="{:substr($v.img_path,1)}">
+                        <div class="team_txt">
+                            <h4>{$v.name}
+                                <small>{$v.title}</small>
+                            </h4>
+                            <p>{$v.profile}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {/volist}
+        </div>
+    </div>
+</div>
+<!----footer---->
+{include file="pub/foot"}

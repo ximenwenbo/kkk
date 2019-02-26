@@ -1,0 +1,49 @@
+{include file="pub/head"}
+<title>添加管理员 - 管理员管理 - H-ui.admin v3.1</title>
+<meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+<meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+<body>
+<article class="page-container">
+    <form class="form form-horizontal" id="form-admin-add" method="post" >
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3">公司文化：</label>
+
+            <div class="formControls col-xs-8 col-sm-9">
+
+                <textarea name="detail_one"   class="textarea"  placeholder="说点什么...300个字符以内" dragonfly="true" >{$info.detail_one ?? ''}</textarea>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/300</p>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3">公司主营业务：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="detail_two"  class="textarea"  placeholder="说点什么...200个字符以内" dragonfly="true">{$info.detail_two ?? ''}</textarea>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+
+
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="{:config('admin_lib')}jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="{:config('admin_lib')}jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="{:config('admin_lib')}jquery.validation/1.14.0/messages_zh.js"></script>
+
+<!--/请在上方写此页面业务相关的脚本-->
+{include file="pub/foot"}
+{include file="about/js_shou"}
